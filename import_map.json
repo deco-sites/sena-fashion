@@ -1,5 +1,7 @@
 {
   "imports": {
+    "deco-sites/sena-fashion/": "./",
+
     "deco-sites/fashion/": "./",
     "$store/": "./",
     "deco-sites/std/": "https://denopkg.com/deco-sites/std@1.12.11/",
