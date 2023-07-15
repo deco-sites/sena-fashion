@@ -24,8 +24,8 @@ export interface Props {
 }
 
 const MARGIN = { top: 30, right: 30, bottom: 50, left: 50 };
-const WIDTH = 300;
-const HEIGHT = 150;
+const WIDTH = 600;
+const HEIGHT = 300;
 
 type AxisBottomProps = {
   xScale: d3.ScaleLinear<number, number>;
@@ -76,6 +76,60 @@ function AxisBottom(
         </g>
       ))}
     </g>
+  );
+}
+
+type AxisLeftProps = {
+  yScale: d3.ScaleLinear<number, number>;
+  pixelsPerTick: number;
+};
+
+function AxisLeft({ yScale, pixelsPerTick }: AxisLeftProps) {
+  const range = yScale.range();
+
+  const ticks = useMemo(() => {
+    const height = range[0] - range[1];
+    const numberOfTicksTarget = Math.floor(height / pixelsPerTick);
+
+    return yScale.ticks(numberOfTicksTarget).map((value) => ({
+      value,
+      yOffset: yScale(value),
+    }));
+  }, [yScale]);
+
+  return (
+    <>
+      {/* Main vertical line */}
+      <path
+        d={["M", 0, range[0], "L", 0, range[1]].join(" ")}
+        fill="none"
+        stroke="currentColor"
+      />
+
+      {/* Ticks and labels */}
+      {ticks.map(({ value, yOffset }) => (
+        <g
+          key={value}
+          transform={`translate(0, ${yOffset})`}
+          shapeRendering={"crispEdges"}
+        >
+          <line
+            x2={-TICK_LENGTH}
+            stroke="currentColor"
+          />
+          <text
+            key={value}
+            style={{
+              fontSize: "10px",
+              textAnchor: "middle",
+              transform: "translateX(-20px)",
+            }}
+          >
+            {value}
+          </text>
+        </g>
+      ))}
+    </>
   );
 }
 
@@ -138,6 +192,10 @@ export default function DashboardWidget(
             xScale={xScale}
             numberOfTicksTarget={data.length}
             yOffset={boundsHeight}
+          />
+          <AxisLeft
+            yScale={yScale}
+            pixelsPerTick={30}
           />
         </g>
       </svg>
