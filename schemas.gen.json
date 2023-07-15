@@ -3967,7 +3967,12 @@
       "type": "object",
       "properties": {
         "x": {
-          "type": "number",
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {}
+          ],
           "title": "X"
         },
         "y": {
@@ -4079,8 +4084,13 @@
             },
             {
               "type": "string",
-              "const": "WEEKLY_TIMESERIES",
-              "default": "WEEKLY_TIMESERIES"
+              "const": "DAILY_TIMESERIES_WEEK",
+              "default": "DAILY_TIMESERIES_WEEK"
+            },
+            {
+              "type": "string",
+              "const": "WEEKLY_TIMESERIES_MONTH",
+              "default": "WEEKLY_TIMESERIES_MONTH"
             }
           ],
           "type": "string",

@@ -1,7 +1,7 @@
 import type { LoaderReturnType } from "$live/types.ts";
 
 export interface Point {
-  x: number;
+  x: number | Date;
   y: number;
 }
 
