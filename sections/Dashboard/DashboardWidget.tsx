@@ -121,8 +121,8 @@ function AxisLeft({ yScale, pixelsPerTick }: AxisLeftProps) {
             key={value}
             style={{
               fontSize: "10px",
-              textAnchor: "middle",
-              transform: "translateX(-20px)",
+              textAnchor: "end",
+              transform: `translate(-${TICK_LENGTH * 2}px,3px)`,
             }}
           >
             {value}
