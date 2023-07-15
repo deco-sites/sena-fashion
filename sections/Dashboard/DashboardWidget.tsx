@@ -27,6 +27,58 @@ const MARGIN = { top: 30, right: 30, bottom: 50, left: 50 };
 const WIDTH = 300;
 const HEIGHT = 150;
 
+type AxisBottomProps = {
+  xScale: d3.ScaleLinear<number, number>;
+  numberOfTicksTarget: number;
+  yOffset: number;
+};
+
+// tick length
+const TICK_LENGTH = 6;
+
+function AxisBottom(
+  { xScale, numberOfTicksTarget, yOffset }: AxisBottomProps,
+) {
+  const range = xScale.range();
+
+  const ticks = useMemo(() => {
+    const width = range[1] - range[0];
+    const test = xScale.ticks(numberOfTicksTarget);
+    return xScale.ticks(numberOfTicksTarget).map((value) => ({
+      value,
+      xOffset: xScale(value),
+    }));
+  }, [xScale]);
+
+  return (
+    <g transform={`translate(0,${yOffset})`}>
+      {/* Main horizontal line */}
+      <path
+        d={["M", range[0], 0, "L", range[1], 0].join(" ")}
+        fill="none"
+        stroke="currentColor"
+      />
+
+      {/* Ticks and labels */}
+      {ticks.map(({ value, xOffset }) => (
+        <g key={value} transform={`translate(${xOffset}, 0)`}>
+          <line y2={TICK_LENGTH} stroke="currentColor" />
+          <text
+            key={value}
+            style={{
+              fontSize: "10px",
+              textAnchor: "middle",
+              transform: "translateY(20px)",
+            }}
+          >
+            {value}
+          </text>
+        </g>
+      ))}
+    </g>
+  );
+}
+
 export default function DashboardWidget(
   { graphData: { name, series } }: Props,
 ) {
@@ -35,7 +87,6 @@ export default function DashboardWidget(
   const data = series[0].points.map(({ x, y }, ind) => ({ y, x: ind }));
 
   // bounds = area inside the graph axis = calculated by substracting the margins
-  const axesRef = useRef(null);
   const boundsWidth = width - MARGIN.right - MARGIN.left;
   const boundsHeight = height - MARGIN.top - MARGIN.bottom;
 
@@ -57,27 +108,12 @@ export default function DashboardWidget(
       .range([0, boundsWidth]);
   }, [data, width]);
 
-  // Render the X and Y axis using d3.js, not react
-  useEffect(() => {
-    const svgElement = d3.select(axesRef.current);
-    svgElement.selectAll("*").remove();
-    const xAxisGenerator = d3.axisBottom(xScale);
-    svgElement
-      .append("g")
-      .attr("transform", "translate(0," + boundsHeight + ")")
-      .call(xAxisGenerator);
-
-    const yAxisGenerator = d3.axisLeft(yScale);
-    svgElement.append("g").call(yAxisGenerator);
-  }, [xScale, yScale, boundsHeight]);
-
   // Build the line
   const lineBuilder = d3
     .line<{ x: number; y: number }>()
     .x((d) => xScale(d.x))
     .y((d) => yScale(d.y));
   const linePath = lineBuilder(data);
-  console.log({ linePath });
   if (!linePath) {
     return null;
   }
@@ -98,13 +134,12 @@ export default function DashboardWidget(
             fill="none"
             strokeWidth={2}
           />
+          <AxisBottom
+            xScale={xScale}
+            numberOfTicksTarget={data.length}
+            yOffset={boundsHeight}
+          />
         </g>
-        <g
-          width={boundsWidth}
-          height={boundsHeight}
-          ref={axesRef}
-          transform={`translate(${[MARGIN.left, MARGIN.top].join(",")})`}
-        />
       </svg>
     </div>
   );
