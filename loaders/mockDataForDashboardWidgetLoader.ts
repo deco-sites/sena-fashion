@@ -16,6 +16,11 @@ export interface Params {
   setting: SupportedSettings;
 }
 
+function getDateDaysAgo(days: number) {
+  const d = new Date();
+  return new Date(d.setDate(d.getDate() - days));
+}
+
 function buildTimeseriesForWindow(length: number, jump_in_days: number) {
   return map(
     sum,
@@ -23,7 +28,7 @@ function buildTimeseriesForWindow(length: number, jump_in_days: number) {
       length,
       splitEvery(jump_in_days, reverse(MOCK_CONVERSIONS_DATA_LAST_28_DAYS)),
     ),
-  ).map((y) => ({ y, x: new Date() }));
+  ).map((y, ind) => ({ y, x: getDateDaysAgo(ind * jump_in_days) }));
 }
 
 export default function loader({ setting }: Params): GraphData {

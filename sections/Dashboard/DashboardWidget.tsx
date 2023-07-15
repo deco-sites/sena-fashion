@@ -28,7 +28,7 @@ const WIDTH = 600;
 const HEIGHT = 300;
 
 type AxisBottomProps = {
-  xScale: d3.ScaleLinear<number, number>;
+  xScale: d3.ScaleTime<number, number>;
   numberOfTicksTarget: number;
   yOffset: number;
 };
@@ -71,7 +71,7 @@ function AxisBottom(
               transform: "translateY(20px)",
             }}
           >
-            {value}
+            {xScale.tickFormat(numberOfTicksTarget)(new Date(value))}
           </text>
         </g>
       ))}
@@ -138,7 +138,7 @@ export default function DashboardWidget(
 ) {
   const width = WIDTH;
   const height = HEIGHT;
-  const data = series[0].points.map(({ x, y }, ind) => ({ y, x: ind }));
+  const data = series[0].points.map(({ x, y }, ind) => ({ y, x }));
 
   // bounds = area inside the graph axis = calculated by substracting the margins
   const boundsWidth = width - MARGIN.right - MARGIN.left;
@@ -157,14 +157,14 @@ export default function DashboardWidget(
   const [xMin, xMax] = d3.extent(data, (d) => d.x);
   const xScale = useMemo(() => {
     return d3
-      .scaleLinear()
+      .scaleTime()
       .domain([xMin || 0, xMax || 0])
-      .range([0, boundsWidth]);
+      .range([0, boundsWidth]).nice();
   }, [data, width]);
 
   // Build the line
   const lineBuilder = d3
-    .line<{ x: number; y: number }>()
+    .line<{ x: Date; y: number }>()
     .x((d) => xScale(d.x))
     .y((d) => yScale(d.y));
   const linePath = lineBuilder(data);
