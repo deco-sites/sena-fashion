@@ -3967,12 +3967,6 @@
       "type": "object",
       "properties": {
         "x": {
-          "anyOf": [
-            {
-              "type": "number"
-            },
-            {}
-          ],
           "title": "X"
         },
         "y": {
