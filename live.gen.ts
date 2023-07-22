@@ -215,8 +215,10 @@ const manifest = {
     "deco-sites/sena-fashion/sections/Images/ShoppableBanner.tsx": $$$$$$$$3,
     "deco-sites/sena-fashion/sections/Links/LinkTree.tsx": $$$$$$$$20,
     "deco-sites/sena-fashion/sections/Links/Shortcuts.tsx": $$$$$$$$21,
-    "deco-sites/sena-fashion/sections/Miscellaneous/CampaignTimer.tsx": $$$$$$$$15,
-    "deco-sites/sena-fashion/sections/Miscellaneous/CookieConsent.tsx": $$$$$$$$16,
+    "deco-sites/sena-fashion/sections/Miscellaneous/CampaignTimer.tsx":
+      $$$$$$$$15,
+    "deco-sites/sena-fashion/sections/Miscellaneous/CookieConsent.tsx":
+      $$$$$$$$16,
     "deco-sites/sena-fashion/sections/Newsletter/Newsletter.tsx": $$$$$$$$22,
     "deco-sites/sena-fashion/sections/Product/ProductDetails.tsx": $$$$$$$$14,
     "deco-sites/sena-fashion/sections/Product/ProductShelf.tsx": $$$$$$$$13,
