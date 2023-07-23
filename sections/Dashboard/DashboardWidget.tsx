@@ -133,8 +133,8 @@ function AxisLeft({ yScale, pixelsPerTick }: AxisLeftProps) {
   );
 }
 
-export default function DashboardWidget(
-  { graphData: { name, series } }: Props,
+function Chart(
+  { series }: { series: Series[] },
 ) {
   const width = WIDTH;
   const height = HEIGHT;
@@ -169,36 +169,43 @@ export default function DashboardWidget(
     .y((d) => yScale(d.y));
   const linePath = lineBuilder(data);
   if (!linePath) {
-    return null;
+    return <p>No data or invalid data.</p>;
   }
 
   return (
+    <svg width={width} height={height}>
+      <g
+        width={boundsWidth}
+        height={boundsHeight}
+        transform={`translate(${[MARGIN.left, MARGIN.top].join(",")})`}
+      >
+        <path
+          d={linePath}
+          opacity={1}
+          stroke="#9a6fb0"
+          fill="none"
+          strokeWidth={2}
+        />
+        <AxisBottom
+          xScale={xScale}
+          numberOfTicksTarget={data.length}
+          yOffset={boundsHeight}
+        />
+        <AxisLeft
+          yScale={yScale}
+          pixelsPerTick={30}
+        />
+      </g>
+    </svg>
+  );
+}
+export default function DashboardWidget(
+  { graphData: { name, series } }: Props,
+) {
+  return (
     <div>
       <h1>{name}</h1>
-      <svg width={width} height={height}>
-        <g
-          width={boundsWidth}
-          height={boundsHeight}
-          transform={`translate(${[MARGIN.left, MARGIN.top].join(",")})`}
-        >
-          <path
-            d={linePath}
-            opacity={1}
-            stroke="#9a6fb0"
-            fill="none"
-            strokeWidth={2}
-          />
-          <AxisBottom
-            xScale={xScale}
-            numberOfTicksTarget={data.length}
-            yOffset={boundsHeight}
-          />
-          <AxisLeft
-            yScale={yScale}
-            pixelsPerTick={30}
-          />
-        </g>
-      </svg>
+      <Chart series={series} />
     </div>
   );
 }

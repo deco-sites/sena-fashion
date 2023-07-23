@@ -10,6 +10,7 @@ import {
 export type SupportedSettings =
   | "EMPTY"
   | "DAILY_TIMESERIES_WEEK"
+  | "PAGE_VISITS_MOCK"
   | "WEEKLY_TIMESERIES_MONTH";
 
 export interface Params {
@@ -52,6 +53,23 @@ export default function loader({ setting }: Params): GraphData {
             points: buildTimeseriesForWindow(4, 7),
             x_unit: "day",
             y_unit: "conversions",
+          },
+        ],
+      };
+    case "PAGE_VISITS_MOCK":
+      return {
+        name: "Page visits per day (mock).",
+        series: [
+          {
+            points: [
+              { x: new Date("2023-07-15"), y: 14680 },
+              { x: new Date("2023-07-16"), y: 82960 },
+              { x: new Date("2023-07-17"), y: 108480 },
+              { x: new Date("2023-07-18"), y: 48040 },
+              { x: new Date("2023-07-19"), y: 50600 },
+              { x: new Date("2023-07-20"), y: 58520 },
+              { x: new Date("2023-07-21"), y: 53720 },
+            ],
           },
         ],
       };

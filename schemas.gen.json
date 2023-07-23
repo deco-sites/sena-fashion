@@ -4119,6 +4119,11 @@
             },
             {
               "type": "string",
+              "const": "PAGE_VISITS_MOCK",
+              "default": "PAGE_VISITS_MOCK"
+            },
+            {
+              "type": "string",
               "const": "WEEKLY_TIMESERIES_MONTH",
               "default": "WEEKLY_TIMESERIES_MONTH"
             }
