@@ -48,6 +48,7 @@
               "$live/loaders/state.ts",
               "$live/loaders/workflows/events.ts",
               "$live/loaders/workflows/get.ts",
+              "deco-sites/sena-fashion/loaders/dashboard/cloudflare/cloudflarePageVisitsLoader.ts",
               "deco-sites/sena-fashion/loaders/dashboard/randomSingleValueLoader.ts",
               "deco-sites/sena-fashion/loaders/dashboard/randomTimeseriesLoader.ts",
               "deco-sites/std/loaders/nuvemShop/nuvemShopProductDetailsPage.ts",
@@ -3965,6 +3966,64 @@
       ],
       "title": "deco-cx/live/loaders/workflows/get.ts@Props"
     },
+    "ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vY29tcG9uZW50cy9kYXNoYm9hcmQvd2lkZ2V0L1RpbWVzZXJpZXMudHN4@Data": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/Resolvable"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "series": {
+              "type": "array",
+              "items": {},
+              "title": "Series"
+            }
+          },
+          "required": [
+            "series"
+          ],
+          "title": "deco-sites/sena-fashion/components/dashboard/widget/Timeseries.tsx@Data"
+        },
+        {
+          "title": "deco-sites/sena-fashion/loaders/dashboard/cloudflare/cloudflarePageVisitsLoader.ts",
+          "type": "object",
+          "required": [
+            "__resolveType"
+          ],
+          "properties": {
+            "__resolveType": {
+              "type": "string",
+              "enum": [
+                "deco-sites/sena-fashion/loaders/dashboard/cloudflare/cloudflarePageVisitsLoader.ts"
+              ],
+              "default": "deco-sites/sena-fashion/loaders/dashboard/cloudflare/cloudflarePageVisitsLoader.ts"
+            }
+          }
+        },
+        {
+          "title": "Random value for a Timeseries widget.",
+          "type": "object",
+          "allOf": [
+            {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vbG9hZGVycy9kYXNoYm9hcmQvcmFuZG9tVGltZXNlcmllc0xvYWRlci50cw==@Props"
+            }
+          ],
+          "required": [
+            "__resolveType"
+          ],
+          "properties": {
+            "__resolveType": {
+              "type": "string",
+              "enum": [
+                "deco-sites/sena-fashion/loaders/dashboard/randomTimeseriesLoader.ts"
+              ],
+              "default": "deco-sites/sena-fashion/loaders/dashboard/randomTimeseriesLoader.ts"
+            }
+          }
+        }
+      ]
+    },
     "ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vY29tcG9uZW50cy9kYXNoYm9hcmQvd2lkZ2V0L0NvdW50ZXIudHN4@Data": {
       "anyOf": [
         {
@@ -4023,48 +4082,6 @@
         "maxValue"
       ],
       "title": "deco-sites/sena-fashion/loaders/dashboard/randomSingleValueLoader.ts@Props"
-    },
-    "ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vY29tcG9uZW50cy9kYXNoYm9hcmQvd2lkZ2V0L1RpbWVzZXJpZXMudHN4@Data": {
-      "anyOf": [
-        {
-          "$ref": "#/definitions/Resolvable"
-        },
-        {
-          "type": "object",
-          "properties": {
-            "series": {
-              "type": "array",
-              "items": {},
-              "title": "Series"
-            }
-          },
-          "required": [
-            "series"
-          ],
-          "title": "deco-sites/sena-fashion/components/dashboard/widget/Timeseries.tsx@Data"
-        },
-        {
-          "title": "Random value for a Timeseries widget.",
-          "type": "object",
-          "allOf": [
-            {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vbG9hZGVycy9kYXNoYm9hcmQvcmFuZG9tVGltZXNlcmllc0xvYWRlci50cw==@Props"
-            }
-          ],
-          "required": [
-            "__resolveType"
-          ],
-          "properties": {
-            "__resolveType": {
-              "type": "string",
-              "enum": [
-                "deco-sites/sena-fashion/loaders/dashboard/randomTimeseriesLoader.ts"
-              ],
-              "default": "deco-sites/sena-fashion/loaders/dashboard/randomTimeseriesLoader.ts"
-            }
-          }
-        }
-      ]
     },
     "ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vbG9hZGVycy9kYXNoYm9hcmQvcmFuZG9tVGltZXNlcmllc0xvYWRlci50cw==@Props": {
       "type": "object",
@@ -13585,6 +13602,22 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vbG9hZGVycy9kYXNoYm9hcmQvY2xvdWRmbGFyZS9jbG91ZGZsYXJlUGFnZVZpc2l0c0xvYWRlci50cw==": {
+      "title": "deco-sites/sena-fashion/loaders/dashboard/cloudflare/cloudflarePageVisitsLoader.ts",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/sena-fashion/loaders/dashboard/cloudflare/cloudflarePageVisitsLoader.ts"
+          ],
+          "default": "deco-sites/sena-fashion/loaders/dashboard/cloudflare/cloudflarePageVisitsLoader.ts"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vbG9hZGVycy9kYXNoYm9hcmQvcmFuZG9tU2luZ2xlVmFsdWVMb2FkZXIudHM=": {
       "title": "Random value for a Counter widget.",
       "type": "object",
@@ -16056,6 +16089,9 @@
         },
         {
           "$ref": "#/definitions/JGxpdmUvbG9hZGVycy93b3JrZmxvd3MvZ2V0LnRz"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vbG9hZGVycy9kYXNoYm9hcmQvY2xvdWRmbGFyZS9jbG91ZGZsYXJlUGFnZVZpc2l0c0xvYWRlci50cw=="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vbG9hZGVycy9kYXNoYm9hcmQvcmFuZG9tU2luZ2xlVmFsdWVMb2FkZXIudHM="

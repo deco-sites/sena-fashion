@@ -3,8 +3,9 @@
 // This file is automatically updated during development when running `dev.ts`.
 
 import { DecoManifest } from "$live/types.ts";
-import * as $$$0 from "./loaders/dashboard/randomTimeseriesLoader.ts";
-import * as $$$1 from "./loaders/dashboard/randomSingleValueLoader.ts";
+import * as $$$0 from "./loaders/dashboard/cloudflare/cloudflarePageVisitsLoader.ts";
+import * as $$$1 from "./loaders/dashboard/randomTimeseriesLoader.ts";
+import * as $$$2 from "./loaders/dashboard/randomSingleValueLoader.ts";
 import * as $$$$0 from "./routes/styles.css.ts";
 import * as $$$$1 from "./routes/_app.tsx";
 import * as $$$$$0 from "./islands/Newsletter.tsx";
@@ -173,9 +174,11 @@ const manifest = {
     "$live/loaders/state.ts": i2$$$0,
     "$live/loaders/workflows/events.ts": i2$$$1,
     "$live/loaders/workflows/get.ts": i2$$$2,
+    "deco-sites/sena-fashion/loaders/dashboard/cloudflare/cloudflarePageVisitsLoader.ts":
+      $$$0,
     "deco-sites/sena-fashion/loaders/dashboard/randomSingleValueLoader.ts":
-      $$$1,
-    "deco-sites/sena-fashion/loaders/dashboard/randomTimeseriesLoader.ts": $$$0,
+      $$$2,
+    "deco-sites/sena-fashion/loaders/dashboard/randomTimeseriesLoader.ts": $$$1,
     "deco-sites/std/loaders/nuvemShop/nuvemShopProductDetailsPage.ts": i2$$$3,
     "deco-sites/std/loaders/nuvemShop/nuvemShopProductList.ts": i2$$$4,
     "deco-sites/std/loaders/nuvemShop/nuvemShopProductListingPage.ts": i2$$$5,
