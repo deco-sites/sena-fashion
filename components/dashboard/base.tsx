@@ -1,21 +1,5 @@
 import { ComponentChildren } from "preact";
 
-/**
- * An object returned by a WidgetLoader and used as props by a Widget.
- */
-export interface WidgetProps<TParams> {
-  title: string;
-  params: TParams;
-}
-
-/**
- * The configuration definition for a specific loader.
- */
-export interface BaseLoaderProps<TParams> {
-  title: string;
-  params: TParams;
-}
-
 interface Props {
   title: string;
   children: ComponentChildren;

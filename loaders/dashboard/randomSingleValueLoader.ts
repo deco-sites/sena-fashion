@@ -6,7 +6,7 @@ export interface Props {
 }
 
 /**
- * @description Generates a random value for a counter widget.
+ * @title Random value for a Counter widget.
  */
 export default function counterMockLoader(
   { minValue, maxValue }: Props,

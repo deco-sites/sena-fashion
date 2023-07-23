@@ -4123,8 +4123,7 @@
           "title": "deco-sites/sena-fashion/components/dashboard/widget/Counter.tsx@Data"
         },
         {
-          "title": "deco-sites/sena-fashion/loaders/dashboard/randomSingleValueLoader.ts",
-          "description": "Generates a random value for a counter widget.",
+          "title": "Random value for a Counter widget.",
           "type": "object",
           "allOf": [
             {
@@ -13717,8 +13716,7 @@
       }
     },
     "ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vbG9hZGVycy9kYXNoYm9hcmQvcmFuZG9tU2luZ2xlVmFsdWVMb2FkZXIudHM=": {
-      "title": "deco-sites/sena-fashion/loaders/dashboard/randomSingleValueLoader.ts",
-      "description": "Generates a random value for a counter widget.",
+      "title": "Random value for a Counter widget.",
       "type": "object",
       "allOf": [
         {

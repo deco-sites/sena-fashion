@@ -11,7 +11,7 @@ export interface Props {
 }
 
 /**
- * @description Counter widget.
+ * @title Counter widget.
  */
 export default function Counter({ title, data: { value } }: Props) {
   return (
