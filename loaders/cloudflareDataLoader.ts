@@ -59,7 +59,7 @@ export type Props = {
   name?: string;
 };
 
-function buildVariables(): Object {
+function buildVariables() {
   const end_date = new Date();
   const start_date = new Date();
   start_date.setDate(end_date.getDate() - DATE_WINDOW);
@@ -68,8 +68,8 @@ function buildVariables(): Object {
     "filter": {
       "requestSource": "eyeball",
       "edgeResponseContentTypeName": "html",
-      "datetime_geq": end_date.toISOString(),
-      "datetime_lt": start_date.toISOString(),
+      "datetime_geq": start_date.toISOString(),
+      "datetime_lt": end_date.toISOString(),
       "clientRequestHTTPHost": "www.zeedog.com.br",
     },
   };
