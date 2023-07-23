@@ -48,9 +48,8 @@
               "$live/loaders/state.ts",
               "$live/loaders/workflows/events.ts",
               "$live/loaders/workflows/get.ts",
-              "deco-sites/sena-fashion/loaders/cloudflareDataLoader.ts",
               "deco-sites/sena-fashion/loaders/dashboard/randomSingleValueLoader.ts",
-              "deco-sites/sena-fashion/loaders/mockDataForDashboardWidgetLoader.ts",
+              "deco-sites/sena-fashion/loaders/dashboard/randomTimeseriesLoader.ts",
               "deco-sites/std/loaders/nuvemShop/nuvemShopProductDetailsPage.ts",
               "deco-sites/std/loaders/nuvemShop/nuvemShopProductList.ts",
               "deco-sites/std/loaders/nuvemShop/nuvemShopProductListingPage.ts",
@@ -100,7 +99,7 @@
               "deco-sites/sena-fashion/sections/Content/Logos.tsx",
               "deco-sites/sena-fashion/sections/Content/Testimonials.tsx",
               "deco-sites/sena-fashion/sections/Dashboard/CounterWidget.tsx",
-              "deco-sites/sena-fashion/sections/Dashboard/DashboardWidget.tsx",
+              "deco-sites/sena-fashion/sections/Dashboard/TimeseriesWidget.tsx",
               "deco-sites/sena-fashion/sections/Footer/Footer.tsx",
               "deco-sites/sena-fashion/sections/Header/Header.tsx",
               "deco-sites/sena-fashion/sections/Images/BannerGrid.tsx",
@@ -3966,144 +3965,6 @@
       ],
       "title": "deco-cx/live/loaders/workflows/get.ts@Props"
     },
-    "ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vc2VjdGlvbnMvRGFzaGJvYXJkL0Rhc2hib2FyZFdpZGdldC50c3g=@Point": {
-      "type": "object",
-      "properties": {
-        "x": {
-          "title": "X"
-        },
-        "y": {
-          "type": "number",
-          "title": "Y"
-        }
-      },
-      "required": [
-        "x",
-        "y"
-      ],
-      "title": "Point"
-    },
-    "ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vc2VjdGlvbnMvRGFzaGJvYXJkL0Rhc2hib2FyZFdpZGdldC50c3g=@Series": {
-      "type": "object",
-      "properties": {
-        "points": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vc2VjdGlvbnMvRGFzaGJvYXJkL0Rhc2hib2FyZFdpZGdldC50c3g=@Point"
-          },
-          "title": "Points"
-        },
-        "label": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Label"
-        },
-        "x_unit": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "X_unit"
-        },
-        "y_unit": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Y_unit"
-        }
-      },
-      "required": [
-        "points"
-      ],
-      "title": "Series"
-    },
-    "ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vc2VjdGlvbnMvRGFzaGJvYXJkL0Rhc2hib2FyZFdpZGdldC50c3g=@GraphData": {
-      "anyOf": [
-        {
-          "$ref": "#/definitions/Resolvable"
-        },
-        {
-          "type": "object",
-          "properties": {
-            "name": {
-              "type": "string",
-              "title": "Name"
-            },
-            "series": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vc2VjdGlvbnMvRGFzaGJvYXJkL0Rhc2hib2FyZFdpZGdldC50c3g=@Series"
-              },
-              "title": "Series"
-            }
-          },
-          "required": [
-            "name",
-            "series"
-          ],
-          "title": "deco-sites/sena-fashion/sections/Dashboard/DashboardWidget.tsx@GraphData"
-        },
-        {
-          "title": "deco-sites/sena-fashion/loaders/cloudflareDataLoader.ts",
-          "type": "object",
-          "allOf": [
-            {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vbG9hZGVycy9jbG91ZGZsYXJlRGF0YUxvYWRlci50cw==@Props"
-            }
-          ],
-          "required": [
-            "__resolveType"
-          ],
-          "properties": {
-            "__resolveType": {
-              "type": "string",
-              "enum": [
-                "deco-sites/sena-fashion/loaders/cloudflareDataLoader.ts"
-              ],
-              "default": "deco-sites/sena-fashion/loaders/cloudflareDataLoader.ts"
-            }
-          }
-        },
-        {
-          "title": "deco-sites/sena-fashion/loaders/mockDataForDashboardWidgetLoader.ts",
-          "type": "object",
-          "allOf": [
-            {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vbG9hZGVycy9tb2NrRGF0YUZvckRhc2hib2FyZFdpZGdldExvYWRlci50cw==@Params"
-            }
-          ],
-          "required": [
-            "__resolveType"
-          ],
-          "properties": {
-            "__resolveType": {
-              "type": "string",
-              "enum": [
-                "deco-sites/sena-fashion/loaders/mockDataForDashboardWidgetLoader.ts"
-              ],
-              "default": "deco-sites/sena-fashion/loaders/mockDataForDashboardWidgetLoader.ts"
-            }
-          }
-        }
-      ]
-    },
-    "ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vbG9hZGVycy9jbG91ZGZsYXJlRGF0YUxvYWRlci50cw==@Props": {
-      "type": "object",
-      "properties": {
-        "name": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Name"
-        }
-      },
-      "required": [],
-      "title": "deco-sites/sena-fashion/loaders/cloudflareDataLoader.ts@Props"
-    },
     "ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vY29tcG9uZW50cy9kYXNoYm9hcmQvd2lkZ2V0L0NvdW50ZXIudHN4@Data": {
       "anyOf": [
         {
@@ -4163,40 +4024,65 @@
       ],
       "title": "deco-sites/sena-fashion/loaders/dashboard/randomSingleValueLoader.ts@Props"
     },
-    "ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vbG9hZGVycy9tb2NrRGF0YUZvckRhc2hib2FyZFdpZGdldExvYWRlci50cw==@Params": {
-      "type": "object",
-      "properties": {
-        "setting": {
-          "anyOf": [
+    "ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vY29tcG9uZW50cy9kYXNoYm9hcmQvd2lkZ2V0L1RpbWVzZXJpZXMudHN4@Data": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/Resolvable"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "series": {
+              "type": "array",
+              "items": {},
+              "title": "Series"
+            }
+          },
+          "required": [
+            "series"
+          ],
+          "title": "deco-sites/sena-fashion/components/dashboard/widget/Timeseries.tsx@Data"
+        },
+        {
+          "title": "Random value for a Timeseries widget.",
+          "type": "object",
+          "allOf": [
             {
-              "type": "string",
-              "const": "EMPTY",
-              "default": "EMPTY"
-            },
-            {
-              "type": "string",
-              "const": "DAILY_TIMESERIES_WEEK",
-              "default": "DAILY_TIMESERIES_WEEK"
-            },
-            {
-              "type": "string",
-              "const": "PAGE_VISITS_MOCK",
-              "default": "PAGE_VISITS_MOCK"
-            },
-            {
-              "type": "string",
-              "const": "WEEKLY_TIMESERIES_MONTH",
-              "default": "WEEKLY_TIMESERIES_MONTH"
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vbG9hZGVycy9kYXNoYm9hcmQvcmFuZG9tVGltZXNlcmllc0xvYWRlci50cw==@Props"
             }
           ],
-          "type": "string",
-          "title": "Setting"
+          "required": [
+            "__resolveType"
+          ],
+          "properties": {
+            "__resolveType": {
+              "type": "string",
+              "enum": [
+                "deco-sites/sena-fashion/loaders/dashboard/randomTimeseriesLoader.ts"
+              ],
+              "default": "deco-sites/sena-fashion/loaders/dashboard/randomTimeseriesLoader.ts"
+            }
+          }
+        }
+      ]
+    },
+    "ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vbG9hZGVycy9kYXNoYm9hcmQvcmFuZG9tVGltZXNlcmllc0xvYWRlci50cw==@Props": {
+      "type": "object",
+      "properties": {
+        "minValue": {
+          "type": "number",
+          "title": "Min Value"
+        },
+        "maxValue": {
+          "type": "number",
+          "title": "Max Value"
         }
       },
       "required": [
-        "setting"
+        "minValue",
+        "maxValue"
       ],
-      "title": "deco-sites/sena-fashion/loaders/mockDataForDashboardWidgetLoader.ts@Params"
+      "title": "deco-sites/sena-fashion/loaders/dashboard/randomTimeseriesLoader.ts@Props"
     },
     "ZGVjby1zaXRlcy9zdGQvbG9hZGVycy9udXZlbVNob3AvbnV2ZW1TaG9wUHJvZHVjdERldGFpbHNQYWdlLnRz@Props": {
       "type": "object",
@@ -8943,18 +8829,23 @@
       ],
       "title": "deco-sites/sena-fashion/components/dashboard/widget/Counter.tsx@Props"
     },
-    "ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vc2VjdGlvbnMvRGFzaGJvYXJkL0Rhc2hib2FyZFdpZGdldC50c3g=@Props": {
+    "ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vY29tcG9uZW50cy9kYXNoYm9hcmQvd2lkZ2V0L1RpbWVzZXJpZXMudHN4@Props": {
       "type": "object",
       "properties": {
-        "graphData": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vc2VjdGlvbnMvRGFzaGJvYXJkL0Rhc2hib2FyZFdpZGdldC50c3g=@GraphData",
-          "title": "Graph Data"
+        "title": {
+          "type": "string",
+          "title": "Title"
+        },
+        "data": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vY29tcG9uZW50cy9kYXNoYm9hcmQvd2lkZ2V0L1RpbWVzZXJpZXMudHN4@Data",
+          "title": "Data"
         }
       },
       "required": [
-        "graphData"
+        "title",
+        "data"
       ],
-      "title": "deco-sites/sena-fashion/sections/Dashboard/DashboardWidget.tsx@Props"
+      "title": "deco-sites/sena-fashion/components/dashboard/widget/Timeseries.tsx@Props"
     },
     "ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vY29tcG9uZW50cy9mb290ZXIvRm9vdGVyLnRzeA==@NewsletterForm": {
       "type": "object",
@@ -13694,27 +13585,6 @@
         }
       }
     },
-    "ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vbG9hZGVycy9jbG91ZGZsYXJlRGF0YUxvYWRlci50cw==": {
-      "title": "deco-sites/sena-fashion/loaders/cloudflareDataLoader.ts",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vbG9hZGVycy9jbG91ZGZsYXJlRGF0YUxvYWRlci50cw==@Props"
-        }
-      ],
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "deco-sites/sena-fashion/loaders/cloudflareDataLoader.ts"
-          ],
-          "default": "deco-sites/sena-fashion/loaders/cloudflareDataLoader.ts"
-        }
-      }
-    },
     "ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vbG9hZGVycy9kYXNoYm9hcmQvcmFuZG9tU2luZ2xlVmFsdWVMb2FkZXIudHM=": {
       "title": "Random value for a Counter widget.",
       "type": "object",
@@ -13736,12 +13606,12 @@
         }
       }
     },
-    "ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vbG9hZGVycy9tb2NrRGF0YUZvckRhc2hib2FyZFdpZGdldExvYWRlci50cw==": {
-      "title": "deco-sites/sena-fashion/loaders/mockDataForDashboardWidgetLoader.ts",
+    "ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vbG9hZGVycy9kYXNoYm9hcmQvcmFuZG9tVGltZXNlcmllc0xvYWRlci50cw==": {
+      "title": "Random value for a Timeseries widget.",
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vbG9hZGVycy9tb2NrRGF0YUZvckRhc2hib2FyZFdpZGdldExvYWRlci50cw==@Params"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vbG9hZGVycy9kYXNoYm9hcmQvcmFuZG9tVGltZXNlcmllc0xvYWRlci50cw==@Props"
         }
       ],
       "required": [
@@ -13751,9 +13621,9 @@
         "__resolveType": {
           "type": "string",
           "enum": [
-            "deco-sites/sena-fashion/loaders/mockDataForDashboardWidgetLoader.ts"
+            "deco-sites/sena-fashion/loaders/dashboard/randomTimeseriesLoader.ts"
           ],
-          "default": "deco-sites/sena-fashion/loaders/mockDataForDashboardWidgetLoader.ts"
+          "default": "deco-sites/sena-fashion/loaders/dashboard/randomTimeseriesLoader.ts"
         }
       }
     },
@@ -14729,12 +14599,12 @@
         }
       }
     },
-    "ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vc2VjdGlvbnMvRGFzaGJvYXJkL0Rhc2hib2FyZFdpZGdldC50c3g=": {
-      "title": "deco-sites/sena-fashion/sections/Dashboard/DashboardWidget.tsx",
+    "ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vc2VjdGlvbnMvRGFzaGJvYXJkL1RpbWVzZXJpZXNXaWRnZXQudHN4": {
+      "title": "Timeseries widget.",
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vc2VjdGlvbnMvRGFzaGJvYXJkL0Rhc2hib2FyZFdpZGdldC50c3g=@Props"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vY29tcG9uZW50cy9kYXNoYm9hcmQvd2lkZ2V0L1RpbWVzZXJpZXMudHN4@Props"
         }
       ],
       "required": [
@@ -14744,9 +14614,9 @@
         "__resolveType": {
           "type": "string",
           "enum": [
-            "deco-sites/sena-fashion/sections/Dashboard/DashboardWidget.tsx"
+            "deco-sites/sena-fashion/sections/Dashboard/TimeseriesWidget.tsx"
           ],
-          "default": "deco-sites/sena-fashion/sections/Dashboard/DashboardWidget.tsx"
+          "default": "deco-sites/sena-fashion/sections/Dashboard/TimeseriesWidget.tsx"
         }
       }
     },
@@ -16188,13 +16058,10 @@
           "$ref": "#/definitions/JGxpdmUvbG9hZGVycy93b3JrZmxvd3MvZ2V0LnRz"
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vbG9hZGVycy9jbG91ZGZsYXJlRGF0YUxvYWRlci50cw=="
-        },
-        {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vbG9hZGVycy9kYXNoYm9hcmQvcmFuZG9tU2luZ2xlVmFsdWVMb2FkZXIudHM="
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vbG9hZGVycy9tb2NrRGF0YUZvckRhc2hib2FyZFdpZGdldExvYWRlci50cw=="
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vbG9hZGVycy9kYXNoYm9hcmQvcmFuZG9tVGltZXNlcmllc0xvYWRlci50cw=="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvbG9hZGVycy9udXZlbVNob3AvbnV2ZW1TaG9wUHJvZHVjdERldGFpbHNQYWdlLnRz"
@@ -16380,7 +16247,7 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vc2VjdGlvbnMvRGFzaGJvYXJkL0NvdW50ZXJXaWRnZXQudHN4"
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vc2VjdGlvbnMvRGFzaGJvYXJkL0Rhc2hib2FyZFdpZGdldC50c3g="
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vc2VjdGlvbnMvRGFzaGJvYXJkL1RpbWVzZXJpZXNXaWRnZXQudHN4"
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vc2VjdGlvbnMvRm9vdGVyL0Zvb3Rlci50c3g="

@@ -3,9 +3,8 @@
 // This file is automatically updated during development when running `dev.ts`.
 
 import { DecoManifest } from "$live/types.ts";
-import * as $$$0 from "./loaders/cloudflareDataLoader.ts";
+import * as $$$0 from "./loaders/dashboard/randomTimeseriesLoader.ts";
 import * as $$$1 from "./loaders/dashboard/randomSingleValueLoader.ts";
-import * as $$$2 from "./loaders/mockDataForDashboardWidgetLoader.ts";
 import * as $$$$0 from "./routes/styles.css.ts";
 import * as $$$$1 from "./routes/_app.tsx";
 import * as $$$$$0 from "./islands/Newsletter.tsx";
@@ -36,8 +35,8 @@ import * as $$$$$$$$13 from "./sections/Product/ProductShelf.tsx";
 import * as $$$$$$$$14 from "./sections/Product/ProductDetails.tsx";
 import * as $$$$$$$$15 from "./sections/Miscellaneous/CampaignTimer.tsx";
 import * as $$$$$$$$16 from "./sections/Miscellaneous/CookieConsent.tsx";
-import * as $$$$$$$$17 from "./sections/Dashboard/CounterWidget.tsx";
-import * as $$$$$$$$18 from "./sections/Dashboard/DashboardWidget.tsx";
+import * as $$$$$$$$17 from "./sections/Dashboard/TimeseriesWidget.tsx";
+import * as $$$$$$$$18 from "./sections/Dashboard/CounterWidget.tsx";
 import * as $$$$$$$$19 from "./sections/Social/WhatsApp.tsx";
 import * as $$$$$$$$20 from "./sections/Social/InstagramPosts.tsx";
 import * as $$$$$$$$21 from "./sections/Theme/Theme.tsx";
@@ -174,10 +173,9 @@ const manifest = {
     "$live/loaders/state.ts": i2$$$0,
     "$live/loaders/workflows/events.ts": i2$$$1,
     "$live/loaders/workflows/get.ts": i2$$$2,
-    "deco-sites/sena-fashion/loaders/cloudflareDataLoader.ts": $$$0,
     "deco-sites/sena-fashion/loaders/dashboard/randomSingleValueLoader.ts":
       $$$1,
-    "deco-sites/sena-fashion/loaders/mockDataForDashboardWidgetLoader.ts": $$$2,
+    "deco-sites/sena-fashion/loaders/dashboard/randomTimeseriesLoader.ts": $$$0,
     "deco-sites/std/loaders/nuvemShop/nuvemShopProductDetailsPage.ts": i2$$$3,
     "deco-sites/std/loaders/nuvemShop/nuvemShopProductList.ts": i2$$$4,
     "deco-sites/std/loaders/nuvemShop/nuvemShopProductListingPage.ts": i2$$$5,
@@ -240,9 +238,9 @@ const manifest = {
     "deco-sites/sena-fashion/sections/Content/Faq.tsx": $$$$$$$$9,
     "deco-sites/sena-fashion/sections/Content/Logos.tsx": $$$$$$$$8,
     "deco-sites/sena-fashion/sections/Content/Testimonials.tsx": $$$$$$$$7,
-    "deco-sites/sena-fashion/sections/Dashboard/CounterWidget.tsx": $$$$$$$$17,
-    "deco-sites/sena-fashion/sections/Dashboard/DashboardWidget.tsx":
-      $$$$$$$$18,
+    "deco-sites/sena-fashion/sections/Dashboard/CounterWidget.tsx": $$$$$$$$18,
+    "deco-sites/sena-fashion/sections/Dashboard/TimeseriesWidget.tsx":
+      $$$$$$$$17,
     "deco-sites/sena-fashion/sections/Footer/Footer.tsx": $$$$$$$$0,
     "deco-sites/sena-fashion/sections/Header/Header.tsx": $$$$$$$$25,
     "deco-sites/sena-fashion/sections/Images/BannerGrid.tsx": $$$$$$$$4,
