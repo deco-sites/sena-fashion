@@ -1,22 +1,16 @@
-import type { GraphData } from "deco-sites/sena-fashion/sections/Dashboard/DashboardWidget.tsx";
+import type {
+  GraphData,
+} from "deco-sites/sena-fashion/sections/Dashboard/DashboardWidget.tsx";
 import { badRequest } from "$live/mod.ts";
 
 const gql = (x: TemplateStringsArray) => x.toString().trim();
 
+// TODO: Why do we need to filter the zone?
+const ZONE_TAG = "4d58f2b9ab1091d000cf777f815c51cb";
+
+const DATE_WINDOW = 7;
 const DEFAULT_NAME = "Page visits according to Cloudflare.";
 const ENDPOINT = "https://api.cloudflare.com/client/v4/graphql";
-const VARIABLES = {
-  "zoneTag": "4d58f2b9ab1091d000cf777f815c51cb",
-  "filter": {
-    "requestSource": "eyeball",
-    "edgeResponseContentTypeName": "html",
-    // TODO : Use actual time.
-    "datetime_geq": "2023-07-15T20:00:00Z",
-    "datetime_lt": "2023-07-22T22:00:00Z",
-    "clientRequestHTTPHost": "www.zeedog.com.br",
-  },
-};
-
 const HEADERS: [string, string | undefined][] = [
   ["X-Auth-Key", Deno.env.get("CLOUDFLARE_API_KEY")],
   ["X-Auth-Email", Deno.env.get("CLOUDFLARE_API_EMAIL")],
@@ -65,6 +59,22 @@ export type Props = {
   name?: string;
 };
 
+function buildVariables(): Object {
+  const end_date = new Date();
+  const start_date = new Date();
+  start_date.setDate(end_date.getDate() - DATE_WINDOW);
+  return {
+    "zoneTag": ZONE_TAG,
+    "filter": {
+      "requestSource": "eyeball",
+      "edgeResponseContentTypeName": "html",
+      "datetime_geq": end_date.toISOString(),
+      "datetime_lt": start_date.toISOString(),
+      "clientRequestHTTPHost": "www.zeedog.com.br",
+    },
+  };
+}
+
 function validateHeaders<T>(
   headers: [string, T][],
 ): [string, string][] {
@@ -79,7 +89,7 @@ async function fetchData(): Promise<Data | null> {
       method: "POST",
       body: JSON.stringify({
         query: QUERY,
-        variables: VARIABLES,
+        variables: buildVariables(),
       }),
       headers: validateHeaders(HEADERS),
     },
