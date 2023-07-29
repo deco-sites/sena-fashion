@@ -1,19 +1,41 @@
 {
   "imports": {
     "deco-sites/sena-fashion/": "./",
-
     "deco-sites/fashion/": "./",
     "$store/": "./",
-    "deco-sites/std/": "https://denopkg.com/deco-sites/std@1.12.11/",
-    "$live/": "https://denopkg.com/deco-cx/live@1.19.5/",
+    "std/": "https://deno.land/std@0.190.0/",
     "$fresh/": "https://denopkg.com/deco-cx/fresh@1.3.1/",
+    "$live/": "https://denopkg.com/deco-cx/live@1.19.5/",
+    "partytown/": "https://denopkg.com/deco-cx/partytown@0.4.0/",
+    "deco-sites/std/": "https://denopkg.com/deco-sites/std@1.12.11/",
+    "@preact/signals-core": "https://esm.sh/@preact/signals-core@1.3.0",
+    "@preact/signals": "https://esm.sh/*@preact/signals@1.1.3",
+    "preact-render-to-string": "https://esm.sh/*preact-render-to-string@6.1.0",
     "preact": "https://esm.sh/preact@10.15.1",
     "preact/": "https://esm.sh/preact@10.15.1/",
-    "preact-render-to-string": "https://esm.sh/*preact-render-to-string@6.1.0",
-    "@preact/signals": "https://esm.sh/*@preact/signals@1.1.3",
-    "@preact/signals-core": "https://esm.sh/@preact/signals-core@1.3.0",
-    "std/": "https://deno.land/std@0.190.0/",
-    "partytown/": "https://denopkg.com/deco-cx/partytown@0.4.0/",
-    "daisyui": "npm:daisyui@3.0.3"
+    "@babel/runtime/helpers/esm/typeof": "https://esm.sh/v130/*@babel/runtime@7.22.6/helpers/esm/typeof",
+    "@tremor/react": "https://esm.sh/v130/*@tremor/react@3.5.0",
+    "date-fns/locale": "https://esm.sh/v130/*date-fns@2.30.0/locale",
+    "dom-helpers": "https://esm.sh/v130/*dom-helpers@5.2.1",
+    "react": "https://esm.sh/v130/preact@10.16.0/compat",
+    "tslib": "https://esm.sh/v130/tslib@2.6.1",
+    "tslib/": "https://esm.sh/v130/tslib@2.6.1/",
+    "daisyui": "npm:daisyui@3.0.3",
+    "https://esm.sh/v130/dom-helpers@3.4.0/denonext/class/addClass.js": "./patched/addClass.js"
+  },
+  "scopes": {
+    "https://esm.sh/v130/": {
+      "@babel/runtime": "https://esm.sh/v130/@babel/runtime@7.22.6",
+      "@floating-ui/react": "https://esm.sh/v130/@floating-ui/react@0.19.2",
+      "@headlessui/react": "https://esm.sh/v130/@headlessui/react@1.7.16",
+      "@headlessui/tailwindcss": "https://esm.sh/v130/@headlessui/tailwindcss@0.1.3",
+      "csstype": "https://esm.sh/v130/csstype@3.1.2",
+      "date-fns": "https://esm.sh/v130/date-fns@2.30.0",
+      "react-day-picker": "https://esm.sh/v130/react-day-picker@8.8.0",
+      "react-transition-group": "https://esm.sh/v130/react-transition-group@4.4.5",
+      "recharts": "https://esm.sh/v130/recharts@2.7.2",
+      "regenerator-runtime": "https://esm.sh/v130/regenerator-runtime@0.13.11",
+      "tailwind-merge": "https://esm.sh/v130/tailwind-merge@1.14.0"
+    }
   }
 }
