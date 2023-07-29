@@ -36,15 +36,16 @@ import * as $$$$$$$$13 from "./sections/Product/ProductShelf.tsx";
 import * as $$$$$$$$14 from "./sections/Product/ProductDetails.tsx";
 import * as $$$$$$$$15 from "./sections/Miscellaneous/CampaignTimer.tsx";
 import * as $$$$$$$$16 from "./sections/Miscellaneous/CookieConsent.tsx";
-import * as $$$$$$$$17 from "./sections/Dashboard/TimeseriesWidget.tsx";
-import * as $$$$$$$$18 from "./sections/Dashboard/CounterWidget.tsx";
-import * as $$$$$$$$19 from "./sections/Social/WhatsApp.tsx";
-import * as $$$$$$$$20 from "./sections/Social/InstagramPosts.tsx";
-import * as $$$$$$$$21 from "./sections/Theme/Theme.tsx";
-import * as $$$$$$$$22 from "./sections/Links/LinkTree.tsx";
-import * as $$$$$$$$23 from "./sections/Links/Shortcuts.tsx";
-import * as $$$$$$$$24 from "./sections/Newsletter/Newsletter.tsx";
-import * as $$$$$$$$25 from "./sections/Header/Header.tsx";
+import * as $$$$$$$$17 from "./sections/Dashboard/WidgetRow.tsx";
+import * as $$$$$$$$18 from "./sections/Dashboard/TimeseriesWidget.tsx";
+import * as $$$$$$$$19 from "./sections/Dashboard/CounterWidget.tsx";
+import * as $$$$$$$$20 from "./sections/Social/WhatsApp.tsx";
+import * as $$$$$$$$21 from "./sections/Social/InstagramPosts.tsx";
+import * as $$$$$$$$22 from "./sections/Theme/Theme.tsx";
+import * as $$$$$$$$23 from "./sections/Links/LinkTree.tsx";
+import * as $$$$$$$$24 from "./sections/Links/Shortcuts.tsx";
+import * as $$$$$$$$25 from "./sections/Newsletter/Newsletter.tsx";
+import * as $$$$$$$$26 from "./sections/Header/Header.tsx";
 import * as $live_workflows from "$live/routes/live/workflows/run.ts";
 import * as $live_middleware from "$live/routes/_middleware.ts";
 import * as $live_workbench from "$live/routes/live/workbench.ts";
@@ -241,29 +242,30 @@ const manifest = {
     "deco-sites/sena-fashion/sections/Content/Faq.tsx": $$$$$$$$9,
     "deco-sites/sena-fashion/sections/Content/Logos.tsx": $$$$$$$$8,
     "deco-sites/sena-fashion/sections/Content/Testimonials.tsx": $$$$$$$$7,
-    "deco-sites/sena-fashion/sections/Dashboard/CounterWidget.tsx": $$$$$$$$18,
+    "deco-sites/sena-fashion/sections/Dashboard/CounterWidget.tsx": $$$$$$$$19,
     "deco-sites/sena-fashion/sections/Dashboard/TimeseriesWidget.tsx":
-      $$$$$$$$17,
+      $$$$$$$$18,
+    "deco-sites/sena-fashion/sections/Dashboard/WidgetRow.tsx": $$$$$$$$17,
     "deco-sites/sena-fashion/sections/Footer/Footer.tsx": $$$$$$$$0,
-    "deco-sites/sena-fashion/sections/Header/Header.tsx": $$$$$$$$25,
+    "deco-sites/sena-fashion/sections/Header/Header.tsx": $$$$$$$$26,
     "deco-sites/sena-fashion/sections/Images/BannerGrid.tsx": $$$$$$$$4,
     "deco-sites/sena-fashion/sections/Images/Carousel.tsx": $$$$$$$$6,
     "deco-sites/sena-fashion/sections/Images/ImageGallery.tsx": $$$$$$$$5,
     "deco-sites/sena-fashion/sections/Images/ShoppableBanner.tsx": $$$$$$$$3,
-    "deco-sites/sena-fashion/sections/Links/LinkTree.tsx": $$$$$$$$22,
-    "deco-sites/sena-fashion/sections/Links/Shortcuts.tsx": $$$$$$$$23,
+    "deco-sites/sena-fashion/sections/Links/LinkTree.tsx": $$$$$$$$23,
+    "deco-sites/sena-fashion/sections/Links/Shortcuts.tsx": $$$$$$$$24,
     "deco-sites/sena-fashion/sections/Miscellaneous/CampaignTimer.tsx":
       $$$$$$$$15,
     "deco-sites/sena-fashion/sections/Miscellaneous/CookieConsent.tsx":
       $$$$$$$$16,
-    "deco-sites/sena-fashion/sections/Newsletter/Newsletter.tsx": $$$$$$$$24,
+    "deco-sites/sena-fashion/sections/Newsletter/Newsletter.tsx": $$$$$$$$25,
     "deco-sites/sena-fashion/sections/Product/ProductDetails.tsx": $$$$$$$$14,
     "deco-sites/sena-fashion/sections/Product/ProductShelf.tsx": $$$$$$$$13,
     "deco-sites/sena-fashion/sections/Product/SearchResult.tsx": $$$$$$$$12,
     "deco-sites/sena-fashion/sections/Product/Wishlist.tsx": $$$$$$$$11,
-    "deco-sites/sena-fashion/sections/Social/InstagramPosts.tsx": $$$$$$$$20,
-    "deco-sites/sena-fashion/sections/Social/WhatsApp.tsx": $$$$$$$$19,
-    "deco-sites/sena-fashion/sections/Theme/Theme.tsx": $$$$$$$$21,
+    "deco-sites/sena-fashion/sections/Social/InstagramPosts.tsx": $$$$$$$$21,
+    "deco-sites/sena-fashion/sections/Social/WhatsApp.tsx": $$$$$$$$20,
+    "deco-sites/sena-fashion/sections/Theme/Theme.tsx": $$$$$$$$22,
     "deco-sites/std/sections/Analytics.tsx": i2$$$$$5,
     "deco-sites/std/sections/configButterCMS.global.tsx": i2$$$$$6,
     "deco-sites/std/sections/configNuvemShop.tsx": i2$$$$$7,

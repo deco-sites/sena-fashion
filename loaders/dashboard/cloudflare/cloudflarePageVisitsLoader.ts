@@ -42,7 +42,9 @@ interface Result {
   };
 }
 
-export default async function cloudflarePageVisitsLoader(): Promise<Data> {
+export default async function cloudflarePageVisitsLoader(): Promise<
+  Data | null
+> {
   const end_date = new Date();
   const start_date = new Date();
   start_date.setDate(end_date.getDate() - DATE_WINDOW);
@@ -65,8 +67,7 @@ export default async function cloudflarePageVisitsLoader(): Promise<Data> {
 
   const zoneData = data?.viewer?.zones.find((zone) => zone != null);
   if (zoneData == null) {
-    // TODO - The generic widget should know how to render errors.
-    return { series: [] };
+    return null;
   }
   const points = zoneData.httpRequestsAdaptiveGroups.map((data) => ({
     x: new Date(data.dimensions.date),

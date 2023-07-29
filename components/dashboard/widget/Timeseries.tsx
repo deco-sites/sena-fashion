@@ -17,7 +17,7 @@ export interface Data {
 
 export interface Props {
   title: string;
-  data: LoaderReturnType<Data>;
+  data: LoaderReturnType<Data | null>;
 }
 
 /**
@@ -26,7 +26,7 @@ export interface Props {
 export default function Timeseries({ title, data }: Props) {
   return (
     <Widget title={title}>
-      <TimeseriesGraph series={data.series} />
+      {data == null ? "No data" : <TimeseriesGraph series={data.series} />}
     </Widget>
   );
 }

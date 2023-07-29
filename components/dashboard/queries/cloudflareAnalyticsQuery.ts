@@ -1,5 +1,3 @@
-import { badRequest } from "$live/mod.ts";
-
 const SUCCESS_CODE = 200;
 const ENDPOINT = "https://api.cloudflare.com/client/v4/graphql";
 const HEADERS: [string, string | undefined][] = [
@@ -37,7 +35,6 @@ export default async function fetchData<TData, TQuery, TVariables>(
   );
   if (response.status > SUCCESS_CODE) {
     console.error(await response.text());
-    badRequest({ message: "Non 200 response from CF" });
     return null;
   }
   return (await response.json() as { data: TData }).data;
