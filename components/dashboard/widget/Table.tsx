@@ -15,15 +15,11 @@ function TableInner({ dataset: { headers, values } }: { dataset: Dataset }) {
   return (
     <table>
       <tr>
-        {headers.map((header) => (
-          <th>{header}</th>
-        ))}
+        {headers.map((header) => <th>{header}</th>)}
       </tr>
       {values.map((row) => (
         <tr>
-          {row.map((cell) => (
-            <td>{cell}</td>
-          ))}
+          {row.map((cell) => <td>{cell}</td>)}
         </tr>
       ))}
     </table>

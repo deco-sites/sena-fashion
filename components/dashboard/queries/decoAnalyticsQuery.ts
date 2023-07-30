@@ -46,7 +46,7 @@ function fetchMockData(queryPath: string): object | null {
 }
 
 export default async function fetchData<TData>(
-  siteName: string,
+  siteIdentifier: string | number,
   queryPath: string,
 ): Promise<TData | null> {
   if (IS_MOCK_MODE) {
@@ -54,7 +54,8 @@ export default async function fetchData<TData>(
   }
 
   const response = await fetch(
-    new URL(`/api/${siteName}/analytics/${queryPath}`, API_HOSTNAME).toString(),
+    new URL(`/api/${siteIdentifier}/analytics/${queryPath}`, API_HOSTNAME)
+      .toString(),
     {
       method: "GET",
       headers: [["Accept", "application/json"], [

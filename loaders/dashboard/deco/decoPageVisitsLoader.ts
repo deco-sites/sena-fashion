@@ -1,5 +1,6 @@
 import fetchData from "$store/components/dashboard/queries/decoAnalyticsQuery.ts";
 import type { Dataset } from "$store/components/dashboard/widget/Timeseries.tsx";
+import { siteId } from "$store/site.json" assert { type: "json" };
 
 const QUERY_PATH = "page-visits-1d-l7d";
 
@@ -12,7 +13,7 @@ export default async function decoPageVisitsLoader(): Promise<
   Dataset | null
 > {
   const data = await fetchData<Result>(
-    "camp",
+    siteId,
     QUERY_PATH,
   );
 
