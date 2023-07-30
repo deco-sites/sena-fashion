@@ -1,4 +1,4 @@
-import type { Data } from "$store/components/dashboard/widget/Timeseries.tsx";
+import type { Dataset } from "$store/components/dashboard/widget/Timeseries.tsx";
 import fetchData, {
   gql,
 } from "$store/components/dashboard/queries/cloudflareAnalyticsQuery.ts";
@@ -43,7 +43,7 @@ interface Result {
 }
 
 export default async function cloudflarePageVisitsLoader(): Promise<
-  Data | null
+  Dataset | null
 > {
   const end_date = new Date();
   const start_date = new Date();
@@ -69,9 +69,13 @@ export default async function cloudflarePageVisitsLoader(): Promise<
   if (zoneData == null) {
     return null;
   }
-  const points = zoneData.httpRequestsAdaptiveGroups.map((data) => ({
-    x: new Date(data.dimensions.date),
-    y: data.sum.visits,
-  })).sort((a, b) => a.x < b.x ? -1 : a.x > b.x ? 1 : 0);
-  return { series: [{ points }] };
+  const groups = zoneData.httpRequestsAdaptiveGroups.sort((a, b) => {
+    const da = new Date(a.dimensions.date);
+    const db = new Date(b.dimensions.date);
+    return da < db ? -1 : da > db ? 1 : 0;
+  });
+
+  const categories = groups.map(({ dimensions: { date } }) => date.toString());
+  const visits = groups.map(({ sum: { visits } }) => visits);
+  return { categories, series: [{ label: "Page visits", values: visits }] };
 }

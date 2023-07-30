@@ -1,4 +1,4 @@
-import { Data } from "$store/components/dashboard/widget/Timeseries.tsx";
+import { Dataset } from "$store/components/dashboard/widget/Timeseries.tsx";
 
 export interface Props {
   minValue: number;
@@ -7,15 +7,14 @@ export interface Props {
 
 function getDateDaysAgo(days: number) {
   const d = new Date();
-  return new Date(d.setDate(d.getDate() - days));
+  return new Date(d.setDate(d.getDate() - days)).toDateString();
 }
 
 function getRandomSeries(getRandomValue: () => number) {
+  const range = [6, 5, 4, 3, 2, 1, 0];
   return {
-    points: [6, 5, 4, 3, 2, 1, 0].map((daysAgo) => ({
-      x: getDateDaysAgo(daysAgo),
-      y: getRandomValue(),
-    })),
+    categories: range.map(getDateDaysAgo),
+    series: [{ values: range.map(getRandomValue), label: "Random values" }],
   };
 }
 
@@ -24,12 +23,11 @@ function getRandomSeries(getRandomValue: () => number) {
  */
 export default function counterMockLoader(
   { minValue, maxValue }: Props,
-): Data {
-  return {
-    series: [getRandomSeries(() =>
+): Dataset {
+  return getRandomSeries(
+    () =>
       Math.round(
         Math.random() * (maxValue - minValue) + minValue,
-      )
-    )],
-  };
+      ),
+  );
 }
