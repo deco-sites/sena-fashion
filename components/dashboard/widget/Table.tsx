@@ -18,18 +18,14 @@ function TableInner({ dataset: { headers, values } }: { dataset: Dataset }) {
         <thead>
           <tr>
             <th></th>
-            {headers.map((header) => (
-              <th>{header}</th>
-            ))}
+            {headers.map((header) => <th>{header}</th>)}
           </tr>
         </thead>
         <tbody>
           {values.map((row, index) => (
             <tr key={index}>
               <th>{index}</th>
-              {row.map((cell) => (
-                <td>{cell}</td>
-              ))}
+              {row.map((cell) => <td>{cell}</td>)}
             </tr>
           ))}
         </tbody>
