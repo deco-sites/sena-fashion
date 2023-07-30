@@ -1,10 +1,9 @@
 import { Widget } from "$store/components/dashboard/base.tsx";
 import type { LoaderReturnType } from "$live/types.ts";
-import TimeseriesGraph from "$store/components/dashboard/graph/TimeseriesGraph.tsx";
 
 export interface Dataset {
-  categories: string[];
-  series: { values: number[]; label: string }[];
+  headers: string[];
+  values: string[][];
 }
 
 export interface Props {
@@ -12,13 +11,32 @@ export interface Props {
   data: LoaderReturnType<Dataset | null>;
 }
 
+function TableInner({ dataset: { headers, values } }: { dataset: Dataset }) {
+  return (
+    <table>
+      <tr>
+        {headers.map((header) => (
+          <th>{header}</th>
+        ))}
+      </tr>
+      {values.map((row) => (
+        <tr>
+          {row.map((cell) => (
+            <td>{cell}</td>
+          ))}
+        </tr>
+      ))}
+    </table>
+  );
+}
+
 /**
- * @title Timeseries widget.
+ * @title Table widget.
  */
-export default function Timeseries({ title, data }: Props) {
+export default function Table({ title, data }: Props) {
   return (
     <Widget title={title}>
-      {data == null ? "No data" : <TimeseriesGraph dataset={data} />}
+      {data == null ? "No data" : <TableInner dataset={data} />}
     </Widget>
   );
 }
