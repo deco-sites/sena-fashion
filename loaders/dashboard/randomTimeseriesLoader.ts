@@ -21,7 +21,7 @@ function getRandomSeries(getRandomValue: () => number) {
 /**
  * @title Random value for a Timeseries widget.
  */
-export default function counterMockLoader(
+export default function randomTimeseriesLoader(
   { minValue, maxValue }: Props,
 ): Dataset {
   return getRandomSeries(
