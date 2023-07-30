@@ -1,7 +1,7 @@
 import randomTimeseriesLoader from "$store/loaders/dashboard/randomTimeseriesLoader.ts";
 
 const API_HOSTNAME = Deno.env.get("DECO_CX_API_HOSTNAME") || "https://deco.cx/";
-const IS_MOCK_MODE = Deno.env.get("IS_MOCK_MODE");
+const MOCK_KEY = "MOCK";
 
 function fetchMockData(queryPath: string): object | null {
   if (queryPath === "page-visits-1d-l7d") {
@@ -49,7 +49,7 @@ export default async function fetchData<TData>(
   siteIdentifier: string | number,
   queryPath: string,
 ): Promise<TData | null> {
-  if (IS_MOCK_MODE) {
+  if (API_HOSTNAME === MOCK_KEY) {
     return fetchMockData(queryPath) as TData;
   }
 
@@ -64,7 +64,6 @@ export default async function fetchData<TData>(
       ]],
     },
   );
-  console.log({ response });
   if (!response.ok) {
     console.error(await response.text());
     return null;

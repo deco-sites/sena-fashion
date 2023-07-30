@@ -1,0 +1,32 @@
+import fetchData from "$store/components/dashboard/queries/decoAnalyticsQuery.ts";
+import type { Dataset } from "$store/components/dashboard/widget/Table.tsx";
+import site from "$store/site.json" assert { type: "json" };
+
+const QUERY_PATH = "most-popular-pages-l7d";
+
+interface Result {
+  entries: {
+    path: string;
+    pageVisitsCount: number;
+  }[];
+}
+
+export default async function decoMostPopularDevicesLoader(): Promise<
+  Dataset | null
+> {
+  const data = await fetchData<Result>(
+    site.siteId,
+    QUERY_PATH,
+  );
+
+  if (data == null) {
+    return null;
+  }
+
+  return {
+    headers: ["Page", "Page Visits (last 7 days)"],
+    values: data.entries.map((
+      { path, pageVisitsCount },
+    ) => [path, String(pageVisitsCount)]),
+  };
+}

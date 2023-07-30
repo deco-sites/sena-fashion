@@ -49,6 +49,8 @@
               "$live/loaders/workflows/events.ts",
               "$live/loaders/workflows/get.ts",
               "deco-sites/sena-fashion/loaders/dashboard/cloudflare/cloudflarePageVisitsLoader.ts",
+              "deco-sites/sena-fashion/loaders/dashboard/deco/decoMostPopularDevicesLoader.ts",
+              "deco-sites/sena-fashion/loaders/dashboard/deco/decoMostPopularPagesLoader.ts",
               "deco-sites/sena-fashion/loaders/dashboard/deco/decoPageVisitsLoader.ts",
               "deco-sites/sena-fashion/loaders/dashboard/randomSingleValueLoader.ts",
               "deco-sites/sena-fashion/loaders/dashboard/randomTimeseriesLoader.ts",
@@ -101,6 +103,7 @@
               "deco-sites/sena-fashion/sections/Content/Logos.tsx",
               "deco-sites/sena-fashion/sections/Content/Testimonials.tsx",
               "deco-sites/sena-fashion/sections/Dashboard/CounterWidget.tsx",
+              "deco-sites/sena-fashion/sections/Dashboard/TableWidget.tsx",
               "deco-sites/sena-fashion/sections/Dashboard/TimeseriesWidget.tsx",
               "deco-sites/sena-fashion/sections/Dashboard/WidgetRow.tsx",
               "deco-sites/sena-fashion/sections/Footer/Footer.tsx",
@@ -4077,6 +4080,78 @@
                 "deco-sites/sena-fashion/loaders/dashboard/deco/decoPageVisitsLoader.ts"
               ],
               "default": "deco-sites/sena-fashion/loaders/dashboard/deco/decoPageVisitsLoader.ts"
+            }
+          }
+        }
+      ]
+    },
+    "ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vY29tcG9uZW50cy9kYXNoYm9hcmQvd2lkZ2V0L1RhYmxlLnRzeA==@Dataset": {
+      "type": "object",
+      "properties": {
+        "headers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "Headers"
+        },
+        "values": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "title": "Values"
+        }
+      },
+      "required": [
+        "headers",
+        "values"
+      ],
+      "title": "Dataset"
+    },
+    "ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vY29tcG9uZW50cy9kYXNoYm9hcmQvd2lkZ2V0L1RhYmxlLnRzeA==@Dataset|null": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/Resolvable"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vY29tcG9uZW50cy9kYXNoYm9hcmQvd2lkZ2V0L1RhYmxlLnRzeA==@Dataset"
+        },
+        {
+          "type": "null"
+        },
+        {
+          "title": "deco-sites/sena-fashion/loaders/dashboard/deco/decoMostPopularDevicesLoader.ts",
+          "type": "object",
+          "required": [
+            "__resolveType"
+          ],
+          "properties": {
+            "__resolveType": {
+              "type": "string",
+              "enum": [
+                "deco-sites/sena-fashion/loaders/dashboard/deco/decoMostPopularDevicesLoader.ts"
+              ],
+              "default": "deco-sites/sena-fashion/loaders/dashboard/deco/decoMostPopularDevicesLoader.ts"
+            }
+          }
+        },
+        {
+          "title": "deco-sites/sena-fashion/loaders/dashboard/deco/decoMostPopularPagesLoader.ts",
+          "type": "object",
+          "required": [
+            "__resolveType"
+          ],
+          "properties": {
+            "__resolveType": {
+              "type": "string",
+              "enum": [
+                "deco-sites/sena-fashion/loaders/dashboard/deco/decoMostPopularPagesLoader.ts"
+              ],
+              "default": "deco-sites/sena-fashion/loaders/dashboard/deco/decoMostPopularPagesLoader.ts"
             }
           }
         }
@@ -8904,6 +8979,24 @@
       ],
       "title": "deco-sites/sena-fashion/components/dashboard/widget/Counter.tsx@Props"
     },
+    "ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vY29tcG9uZW50cy9kYXNoYm9hcmQvd2lkZ2V0L1RhYmxlLnRzeA==@Props": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "title": "Title"
+        },
+        "data": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vY29tcG9uZW50cy9kYXNoYm9hcmQvd2lkZ2V0L1RhYmxlLnRzeA==@Dataset|null",
+          "title": "Data"
+        }
+      },
+      "required": [
+        "title",
+        "data"
+      ],
+      "title": "deco-sites/sena-fashion/components/dashboard/widget/Table.tsx@Props"
+    },
     "ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vY29tcG9uZW50cy9kYXNoYm9hcmQvd2lkZ2V0L1RpbWVzZXJpZXMudHN4@Props": {
       "type": "object",
       "properties": {
@@ -13689,6 +13782,38 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vbG9hZGVycy9kYXNoYm9hcmQvZGVjby9kZWNvTW9zdFBvcHVsYXJEZXZpY2VzTG9hZGVyLnRz": {
+      "title": "deco-sites/sena-fashion/loaders/dashboard/deco/decoMostPopularDevicesLoader.ts",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/sena-fashion/loaders/dashboard/deco/decoMostPopularDevicesLoader.ts"
+          ],
+          "default": "deco-sites/sena-fashion/loaders/dashboard/deco/decoMostPopularDevicesLoader.ts"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vbG9hZGVycy9kYXNoYm9hcmQvZGVjby9kZWNvTW9zdFBvcHVsYXJQYWdlc0xvYWRlci50cw==": {
+      "title": "deco-sites/sena-fashion/loaders/dashboard/deco/decoMostPopularPagesLoader.ts",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/sena-fashion/loaders/dashboard/deco/decoMostPopularPagesLoader.ts"
+          ],
+          "default": "deco-sites/sena-fashion/loaders/dashboard/deco/decoMostPopularPagesLoader.ts"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vbG9hZGVycy9kYXNoYm9hcmQvZGVjby9kZWNvUGFnZVZpc2l0c0xvYWRlci50cw==": {
       "title": "deco-sites/sena-fashion/loaders/dashboard/deco/decoPageVisitsLoader.ts",
       "type": "object",
@@ -14716,6 +14841,27 @@
             "deco-sites/sena-fashion/sections/Dashboard/CounterWidget.tsx"
           ],
           "default": "deco-sites/sena-fashion/sections/Dashboard/CounterWidget.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vc2VjdGlvbnMvRGFzaGJvYXJkL1RhYmxlV2lkZ2V0LnRzeA==": {
+      "title": "Table widget.",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vY29tcG9uZW50cy9kYXNoYm9hcmQvd2lkZ2V0L1RhYmxlLnRzeA==@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/sena-fashion/sections/Dashboard/TableWidget.tsx"
+          ],
+          "default": "deco-sites/sena-fashion/sections/Dashboard/TableWidget.tsx"
         }
       }
     },
@@ -16202,6 +16348,12 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vbG9hZGVycy9kYXNoYm9hcmQvY2xvdWRmbGFyZS9jbG91ZGZsYXJlUGFnZVZpc2l0c0xvYWRlci50cw=="
         },
         {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vbG9hZGVycy9kYXNoYm9hcmQvZGVjby9kZWNvTW9zdFBvcHVsYXJEZXZpY2VzTG9hZGVyLnRz"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vbG9hZGVycy9kYXNoYm9hcmQvZGVjby9kZWNvTW9zdFBvcHVsYXJQYWdlc0xvYWRlci50cw=="
+        },
+        {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vbG9hZGVycy9kYXNoYm9hcmQvZGVjby9kZWNvUGFnZVZpc2l0c0xvYWRlci50cw=="
         },
         {
@@ -16392,6 +16544,9 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vc2VjdGlvbnMvRGFzaGJvYXJkL0NvdW50ZXJXaWRnZXQudHN4"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vc2VjdGlvbnMvRGFzaGJvYXJkL1RhYmxlV2lkZ2V0LnRzeA=="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zZW5hLWZhc2hpb24vc2VjdGlvbnMvRGFzaGJvYXJkL1RpbWVzZXJpZXNXaWRnZXQudHN4"
