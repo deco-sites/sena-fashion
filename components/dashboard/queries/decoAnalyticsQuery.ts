@@ -5,7 +5,14 @@ const MOCK_KEY = "MOCK";
 
 function fetchMockData(queryPath: string): object | null {
   if (queryPath === "page-visits-1d-l7d") {
-    return randomTimeseriesLoader({ minValue: 420, maxValue: 1337 });
+    const randomData = randomTimeseriesLoader({
+      minValue: 420,
+      maxValue: 1337,
+    });
+    return {
+      date: randomData.categories,
+      pageVisitsCount: randomData.series[0].values,
+    };
   }
   if (queryPath === "most-popular-devices-l7d") {
     return {
