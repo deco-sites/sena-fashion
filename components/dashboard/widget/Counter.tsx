@@ -15,8 +15,11 @@ export interface Props {
  */
 export default function Counter({ title, data: { value } }: Props) {
   return (
-    <Widget title={title}>
-      <p>{value}</p>
-    </Widget>
+    <div className="stats shadow">
+      <div className="stat">
+        <div className="stat-title">{title}</div>
+        <div className="stat-value">{value}</div>
+      </div>
+    </div>
   );
 }

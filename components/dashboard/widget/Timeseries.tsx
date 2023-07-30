@@ -1,6 +1,7 @@
 import type { LoaderReturnType } from "$live/types.ts";
 import { Chart } from "$fresh_charts/mod.ts";
 import { ChartColors, transparentize } from "$fresh_charts/utils.ts";
+import Widget from "$store/components/dashboard/widget/Widget.tsx";
 
 export interface Dataset {
   categories: string[];
@@ -12,7 +13,7 @@ export interface Props {
   data: LoaderReturnType<Dataset | null>;
 }
 
-function Graph({ title, dataset }: { title: string; dataset: Dataset }) {
+function Graph({ dataset }: { dataset: Dataset }) {
   return (
     <>
       <div class="p-4 mx-auto max-w-screen-md">
@@ -30,11 +31,6 @@ function Graph({ title, dataset }: { title: string; dataset: Dataset }) {
           }}
           options={{
             plugins: {
-              title: {
-                display: true,
-                text: title,
-                align: "center",
-              },
               legend: {
                 position: "bottom",
               },
@@ -50,8 +46,5 @@ function Graph({ title, dataset }: { title: string; dataset: Dataset }) {
  * @title Timeseries widget.
  */
 export default function Timeseries({ title, data }: Props) {
-  if (data == null) {
-    return <p>No data for ${title}</p>;
-  }
-  return <Graph title={title} dataset={data} />;
+  return <Widget title={title}>{data && <Graph dataset={data} />}</Widget>;
 }
