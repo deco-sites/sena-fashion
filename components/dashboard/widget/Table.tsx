@@ -13,16 +13,24 @@ export interface Props {
 
 function TableInner({ dataset: { headers, values } }: { dataset: Dataset }) {
   return (
-    <table>
-      <tr>
-        {headers.map((header) => <th>{header}</th>)}
-      </tr>
-      {values.map((row) => (
-        <tr>
-          {row.map((cell) => <td>{cell}</td>)}
-        </tr>
+    <ul role="list" className="divide-y divide-gray-100">
+      {values.map((row, idKey) => (
+        <li key={idKey} className="flex justify-between gap-x-6 py-5">
+          <div className="flex gap-x-4">
+            {row.map((value, index) => (
+              <div className="min-w-0 flex-auto">
+                <p className="text-sm font-semibold leading-6 text-gray-900">
+                  {value}
+                </p>
+                <p className="mt-1 truncate text-xs leading-5 text-gray-500">
+                  {headers[index]}
+                </p>
+              </div>
+            ))}
+          </div>
+        </li>
       ))}
-    </table>
+    </ul>
   );
 }
 
