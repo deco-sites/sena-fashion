@@ -15,11 +15,13 @@ export interface Props {
  */
 export default function Counter({ title, data: { value } }: Props) {
   return (
-    <div className="stats shadow">
-      <div className="stat">
-        <div className="stat-title">{title}</div>
-        <div className="stat-value">{value}</div>
+    <li className="w-1/3 self-center">
+      <div className="stats shadow">
+        <div className="stat">
+          <div className="stat-title">{title}</div>
+          <div className="stat-value">{value}</div>
+        </div>
       </div>
-    </div>
+    </li>
   );
 }

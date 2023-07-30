@@ -13,19 +13,23 @@ export interface Props {
 
 function TableInner({ dataset: { headers, values } }: { dataset: Dataset }) {
   return (
-    <div className="overflow-x-auto">
+    <div className="overflow-x-auto w-full">
       <table className="table">
         <thead>
           <tr>
             <th></th>
-            {headers.map((header) => <th>{header}</th>)}
+            {headers.map((header) => (
+              <th>{header}</th>
+            ))}
           </tr>
         </thead>
         <tbody>
           {values.map((row, index) => (
             <tr key={index}>
               <th>{index}</th>
-              {row.map((cell) => <td>{cell}</td>)}
+              {row.map((cell) => (
+                <td>{cell}</td>
+              ))}
             </tr>
           ))}
         </tbody>
@@ -38,5 +42,9 @@ function TableInner({ dataset: { headers, values } }: { dataset: Dataset }) {
  * @title Table widget.
  */
 export default function Table({ title, data }: Props) {
-  return <Widget title={title}>{data && <TableInner dataset={data} />}</Widget>;
+  return (
+    <Widget title={title} width="w-1/3">
+      {data && <TableInner dataset={data} />}
+    </Widget>
+  );
 }

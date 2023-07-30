@@ -16,7 +16,7 @@ export interface Props {
 function Graph({ dataset }: { dataset: Dataset }) {
   return (
     <>
-      <div class="p-4 mx-auto max-w-screen-md">
+      <div class="p-4 w-full">
         <Chart
           type="line"
           data={{
@@ -46,5 +46,9 @@ function Graph({ dataset }: { dataset: Dataset }) {
  * @title Timeseries widget.
  */
 export default function Timeseries({ title, data }: Props) {
-  return <Widget title={title}>{data && <Graph dataset={data} />}</Widget>;
+  return (
+    <Widget title={title} width="w-2/3">
+      {data && <Graph dataset={data} />}
+    </Widget>
+  );
 }
