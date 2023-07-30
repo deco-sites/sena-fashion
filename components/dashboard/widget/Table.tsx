@@ -43,7 +43,7 @@ function TableInner({ dataset: { headers, values } }: { dataset: Dataset }) {
  */
 export default function Table({ title, data }: Props) {
   return (
-    <Widget title={title} width="w-1/3">
+    <Widget title={title} width="col-span-1">
       {data && <TableInner dataset={data} />}
     </Widget>
   );

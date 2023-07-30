@@ -47,7 +47,7 @@ function Graph({ dataset }: { dataset: Dataset }) {
  */
 export default function Timeseries({ title, data }: Props) {
   return (
-    <Widget title={title} width="w-2/3">
+    <Widget title={title} width="col-span-2">
       {data && <Graph dataset={data} />}
     </Widget>
   );
